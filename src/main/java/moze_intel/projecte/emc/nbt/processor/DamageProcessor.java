@@ -33,7 +33,8 @@ public class DamageProcessor implements INBTProcessor {
 			}
 			//maxDmg + 1 because vanilla lets you use the tool one more time
 			// when item damage == max damage (shows as Durability: 0 / max)
-			currentEMC = Math.multiplyExact(currentEMC, Math.addExact(maxDamage - damage, 1)) / maxDamage;
+			//currentEMC = Math.multiplyExact(currentEMC, Math.addExact(maxDamage - damage, 1)) / maxDamage;
+			currentEMC = currentEMC;
 		}
 		return currentEMC;
 	}

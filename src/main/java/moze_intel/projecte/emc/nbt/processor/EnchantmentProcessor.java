@@ -38,7 +38,8 @@ public class EnchantmentProcessor implements INBTProcessor {
 		for (Map.Entry<Enchantment, Integer> entry : enchants.entrySet()) {
 			int rarityWeight = entry.getKey().getRarity().getWeight();
 			if (rarityWeight > 0) {
-				currentEMC = Math.addExact(currentEMC, Math.multiplyExact(ENCH_EMC_BONUS / rarityWeight, entry.getValue()));
+				//currentEMC = Math.addExact(currentEMC, Math.multiplyExact(ENCH_EMC_BONUS / rarityWeight, entry.getValue()));
+				currentEMC = currentEMC;
 			}
 		}
 		return currentEMC;
