@@ -18,27 +18,27 @@ public abstract class GemArmorBase extends PEArmor {
 
 	@Override
 	public float getFullSetBaseReduction() {
-		return 0.9F;
+		return 0;
 	}
 
 	@Override
 	public float getMaxDamageAbsorb(EquipmentSlotType slot, DamageSource source) {
 		if (source.isExplosion()) {
-			return 750;
+			return 0.75f;
 		}
 		if (slot == EquipmentSlotType.FEET && source == DamageSource.FALL) {
-			return 15 / getPieceEffectiveness(slot);
+			return 0.15f / getPieceEffectiveness(slot);
 		} else if (slot == EquipmentSlotType.HEAD && source == DamageSource.DROWN) {
-			return 15 / getPieceEffectiveness(slot);
+			return 0.15f / getPieceEffectiveness(slot);
 		}
 		if (source.isUnblockable()) {
 			return 0;
 		}
 		//If the source is not unblockable, allow our piece to block a certain amount of damage
 		if (slot == EquipmentSlotType.HEAD || slot == EquipmentSlotType.FEET) {
-			return 400;
+			return 0.4f;
 		}
-		return 500;
+		return 0.5f;
 	}
 
 	public static boolean hasAnyPiece(PlayerEntity player) {
@@ -74,7 +74,7 @@ public abstract class GemArmorBase extends PEArmor {
 
 		@Override
 		public int getEnchantability() {
-			return 0;
+			return 1;
 		}
 
 		@Nonnull
@@ -98,7 +98,7 @@ public abstract class GemArmorBase extends PEArmor {
 
 		@Override
 		public float getToughness() {
-			return 2;
+			return 0.3f;
 		}
 
 		@Override

@@ -17,27 +17,27 @@ public class RMArmor extends PEArmor {
 
 	@Override
 	public float getFullSetBaseReduction() {
-		return 0.9F;
+		return 0;
 	}
 
 	@Override
 	public float getMaxDamageAbsorb(EquipmentSlotType slot, DamageSource source) {
 		if (source.isExplosion()) {
-			return 500;
+			return 0.5f;
 		}
 		if (slot == EquipmentSlotType.FEET && source == DamageSource.FALL) {
-			return 10 / getPieceEffectiveness(slot);
+			return 0.1f / getPieceEffectiveness(slot);
 		} else if (slot == EquipmentSlotType.HEAD && source == DamageSource.DROWN) {
-			return 10 / getPieceEffectiveness(slot);
+			return 0.1f / getPieceEffectiveness(slot);
 		}
 		if (source.isUnblockable()) {
 			return 0;
 		}
 		//If the source is not unblockable, allow our piece to block a certain amount of damage
 		if (slot == EquipmentSlotType.HEAD || slot == EquipmentSlotType.FEET) {
-			return 250;
+			return 0.25f;
 		}
-		return 350;
+		return 0.35f;
 	}
 
 	private static class RMArmorMaterial implements IArmorMaterial {
@@ -65,7 +65,7 @@ public class RMArmor extends PEArmor {
 
 		@Override
 		public int getEnchantability() {
-			return 0;
+			return 1;
 		}
 
 		@Nonnull
@@ -89,7 +89,7 @@ public class RMArmor extends PEArmor {
 
 		@Override
 		public float getToughness() {
-			return 2;
+			return 0.3f;
 		}
 
 		@Override

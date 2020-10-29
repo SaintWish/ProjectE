@@ -47,7 +47,7 @@ public class PESword extends SwordItem implements IExtraFunction, IItemCharge {
 
 	@Override
 	public boolean isBookEnchantable(@Nonnull ItemStack stack, @Nonnull ItemStack book) {
-		return false;
+		return true;
 	}
 
 	@Override

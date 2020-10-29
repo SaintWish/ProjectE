@@ -39,7 +39,7 @@ public abstract class PETool extends ToolItem implements IItemCharge {
 
 	@Override
 	public boolean isBookEnchantable(@Nonnull ItemStack stack, @Nonnull ItemStack book) {
-		return false;
+		return true;
 	}
 
 	@Override

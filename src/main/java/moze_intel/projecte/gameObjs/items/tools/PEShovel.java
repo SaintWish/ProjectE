@@ -37,7 +37,7 @@ public class PEShovel extends ShovelItem implements IItemCharge {
 
 	@Override
 	public boolean isBookEnchantable(@Nonnull ItemStack stack, @Nonnull ItemStack book) {
-		return false;
+		return true;
 	}
 
 	@Override

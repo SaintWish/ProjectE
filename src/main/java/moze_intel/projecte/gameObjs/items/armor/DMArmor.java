@@ -17,27 +17,27 @@ public class DMArmor extends PEArmor {
 
 	@Override
 	public float getFullSetBaseReduction() {
-		return 0.8F;
+		return 0;
 	}
 
 	@Override
 	public float getMaxDamageAbsorb(EquipmentSlotType slot, DamageSource source) {
 		if (source.isExplosion()) {
-			return 350;
+			return 0.35f;
 		}
 		if (slot == EquipmentSlotType.FEET && source == DamageSource.FALL) {
-			return 5 / getPieceEffectiveness(slot);
+			return 0.5f / getPieceEffectiveness(slot);
 		} else if (slot == EquipmentSlotType.HEAD && source == DamageSource.DROWN) {
-			return 5 / getPieceEffectiveness(slot);
+			return 0.5f / getPieceEffectiveness(slot);
 		}
 		if (source.isUnblockable()) {
 			return 0;
 		}
 		//If the source is not unblockable, allow our piece to block a certain amount of damage
 		if (slot == EquipmentSlotType.HEAD || slot == EquipmentSlotType.FEET) {
-			return 100;
+			return 0.1f;
 		}
-		return 150;
+		return 0.15f;
 	}
 
 	private static class DMArmorMaterial implements IArmorMaterial {
@@ -65,7 +65,7 @@ public class DMArmor extends PEArmor {
 
 		@Override
 		public int getEnchantability() {
-			return 0;
+			return 1;
 		}
 
 		@Nonnull
@@ -89,7 +89,7 @@ public class DMArmor extends PEArmor {
 
 		@Override
 		public float getToughness() {
-			return 2;
+			return 0.2f;
 		}
 
 		@Override
